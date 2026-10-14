@@ -2,7 +2,7 @@ from model.livro_model import LivroModel
 
 class LivroController:
     def __init__(self):
-        self.livro_model = LivroModel()
+        self.livro_model = LivroModel() # Objeto da classe 'LivroModel' para enviar argumentos;
 
     def cadastrar_livro(self, titulo, ano_publicacao, id_autor):
         if titulo and ano_publicacao and id_autor:

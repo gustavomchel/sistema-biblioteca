@@ -2,7 +2,7 @@ from controller.livro_controller import LivroController
 
 class LivroView:
     def __init__(self):
-        self.livro_controller = LivroController()
+        self.livro_controller = LivroController() # Objeto da classe 'LivroController' para enviar argumentos;
 
     def submenu_livro(self):
         while True:

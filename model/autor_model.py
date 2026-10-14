@@ -12,6 +12,8 @@ class AutorModel:
         except Exception as e:
             print("Erro ao conectar com o banco de dados: ", e)
 
+    # Métodos que recebem parametros de 'autor_controller' para persistir dados;
+
     def inserir_autor(self, nome, nacionalidade):
         try:
             cursor = self.connexao.cursor()

@@ -2,7 +2,7 @@ from controller.autor_controller import AutorController
 
 class AutorView:
     def __init__(self):
-        self.autor_controller = AutorController()
+        self.autor_controller = AutorController() # Objeto da classe 'AutorController' para enviar argumentos; 
 
     def submenu_autor(self):
         while True:
@@ -17,10 +17,16 @@ class AutorView:
                 opcao = int(input("\nEscolha uma opção:"))
 
                 if opcao == 1:
-                    nome = input("\nDigite o nome do autor(a): ")
-                    nacionalidade = input("Digite a nacionalidade do autor(a): ")
-            
-                    self.autor_controller.cadastrar_autor(nome, nacionalidade)
+                    try:
+                        nome = input("\nDigite o nome do autor(a): ")
+                        nacionalidade = input("Digite a nacionalidade do autor(a): ")
+                
+                        self.autor_controller.cadastrar_autor(nome, nacionalidade)
+
+                    except ValueError:
+                        print("\nEntrada Inválida.\n")
+                        return None, None 
+
 
                 elif opcao == 2:
                     self.autor_controller.listar_autores()
@@ -29,7 +35,7 @@ class AutorView:
                     try:
                         id_autor = int(input("\nID do autor a atualizar: "))
                         nome = input("Novo nome: ")
-                        nacionalidade = input("Nova nacionalidade: \n")
+                        nacionalidade = input("Nova nacionalidade: ")
 
                         self.autor_controller.atualizar_autor(nome, nacionalidade, id_autor)
 

@@ -12,6 +12,7 @@ class LivroModel:
         except Exception as e:
             print("Erro ao conectar com o banco de dados:", e)
 
+    # Métodos que recebem parâmetros de 'livro_controller' para persistir dados;
     def inserir_livro(self, titulo, ano_publicacao, id_autor):
         try:
             cursor = self.connexao.cursor()
